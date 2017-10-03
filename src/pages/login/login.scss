@@ -1,3 +1,42 @@
 page-login {
 
+    #page {
+        background: linear-gradient(
+                rgba(0, 6, 2, 0.72),
+                rgba(0, 6, 2, 0.72)),url(./../../assets/img/Rqa9vfrET6WLPGAqXWAQ_28183124992_7c9c419e04_o.jpg) no-repeat center;
+        background-size: cover;
+    }
+
+    #logo-container {
+
+        margin-top: 100px;
+        color: $app-primary;
+        text-align: center;
+        h1 {
+            font-size: 100px;
+        }
+        p {
+            font-size: 40px;
+        }
+
+    }
+
+    #login-form {
+        position: absolute;
+        bottom: 20px;
+        .item {
+            background: transparent;
+            margin-bottom: 10px;
+            padding: 2px;
+            border: solid 1px $app-primary;
+        }
+        .label,
+        .text-input {
+            font-weight: bold;
+            font-size: 20px;
+            color: $app-secondary;
+
+        }
+    }
+
 }

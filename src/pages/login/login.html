@@ -1,37 +1,30 @@
-<ion-content padding style="background:url(assets/img/Rqa9vfrET6WLPGAqXWAQ_28183124992_7c9c419e04_o.jpg) no-repeat center;background-size:cover;background-color:#7C7C7C;" id="page4">
-  <div class="spacer" style="height:100px;" id="login-spacer3"></div>
-  <div id="login-container5">
-    <h1 id="login-heading2" style="color:#F27900;text-align:center;">
-      !00?
-    </h1>
-    <div id="login-markdown3" style="text-align:center;" class="show-list-numbers-and-dots">
-      <p style="color:#F27900;font-size:20px;">
-        Klassen-Chat
-      </p>
+<ion-content padding id="page">
+
+    <div id="logo-container">
+        <h1 id="logo-heading">?00!</h1>
+        <div class="show-list-numbers-and-dots">
+            <p>Klassen-Chat</p>
+        </div>
     </div>
-  </div>
-  <div class="spacer" style="width:300px;height:39px;" id="login-spacer2"></div>
-  <form id="login-form4">
-    <ion-list id="login-list2">
-      <ion-item id="login-input1">
-        <ion-label>
-          Email
-        </ion-label>
-        <ion-input type="email" placeholder=""></ion-input>
-      </ion-item>
-      <ion-item id="login-input2">
-        <ion-label>
-          Password
-        </ion-label>
-        <ion-input type="password" placeholder=""></ion-input>
-      </ion-item>
-    </ion-list>
-    <div class="spacer" style="width:300px;height:44px;" id="login-spacer1"></div>
-    <button id="login-button1" ion-button outline color="stable" block style="color:#FFFFFF;" (click)="login()">
-      Log in
-    </button>
-    <button id="login-button2" ion-button clear color="positive" block href-inappbrowser="/signup">
-      Or create an account
-    </button>
-  </form>
+
+    <form id="login-form">
+        <ion-item no-lines>
+            <ion-label> Email</ion-label>
+            <ion-input type="email" placeholder=""></ion-input>
+        </ion-item>
+
+        <ion-item no-lines>
+            <ion-label> Password</ion-label>
+            <ion-input type="password" placeholder=""></ion-input>
+        </ion-item>
+
+
+        <button id="login-button" ion-button color="stable" large block (click)="login()">
+            Log in
+        </button>
+
+        <button id="signup-button" ion-button clear color="positive" block href-inappbrowser="/signup">
+            Or create an account
+        </button>
+    </form>
 </ion-content>
