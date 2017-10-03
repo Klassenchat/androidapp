@@ -1,19 +1,29 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
+<ion-menu [content]="mainContent">
+  <ion-content id="side-menu21" style="background-color:#7C7C7C;">
+    <div id="groupsMenu-container3">
+      <div style="margin-left:-10px;width:calc(100% + 20px);">
+        <img src="assets/img/agFwXlaYR5ibdQG1JnwE_28183124992_3c9ff95754_z.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+      </div>
+    </div>
+    <ion-list id="groupsMenu-list3">
+      <ion-item color="none" menuClose="" on-click="goToGroups()" id="groupsMenu-list-item12">
+        <ion-avatar item-left>
+          <img />
+        </ion-avatar>
+        <h2>
+          Klasse 6a
+        </h2>
+      </ion-item>
+      <ion-item color="none" menuClose="" on-click="goToGroups()" id="groupsMenu-list-item14">
+        <ion-avatar item-left>
+          <img />
+        </ion-avatar>
+        <h2>
+          Französisch
+        </h2>
+      </ion-item>
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
-<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
