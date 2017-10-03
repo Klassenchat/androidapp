@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
+import {TasksPage} from "../tasks/tasks";
 
 @Component({
   selector: 'page-groups',
@@ -9,5 +10,10 @@ export class GroupsPage {
 
   constructor(public navCtrl: NavController) {
   }
-  
+
+  backToGroupTasks(params) {
+    if (!params) params = {};
+    this.navCtrl.setRoot(TasksPage);
+  }
+
 }

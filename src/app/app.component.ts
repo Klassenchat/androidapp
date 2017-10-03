@@ -31,7 +31,7 @@ export class MyApp {
   }
   goToGroups(params){
     if (!params) params = {};
-    this.navCtrl.setRoot(GroupsPage);
+    this.navCtrl.push(GroupsPage);
   }goToChats(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ChatPage);
