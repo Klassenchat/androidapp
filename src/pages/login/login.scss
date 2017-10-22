@@ -3,31 +3,27 @@ page-login {
     #page {
         background: linear-gradient(
                 rgba(0, 6, 2, 0.72),
-                rgba(0, 6, 2, 0.72)),url(./../../assets/img/Rqa9vfrET6WLPGAqXWAQ_28183124992_7c9c419e04_o.jpg) no-repeat center;
+                rgba(0, 6, 2, 0.72)), url(./../../assets/img/Rqa9vfrET6WLPGAqXWAQ_28183124992_7c9c419e04_o.jpg) no-repeat center;
         background-size: cover;
     }
 
-    #logo-container {
+    ion-grid {
+        height: 100%;
+        justify-content: center;
+    }
 
-        margin-top: 100px;
+    h1 {
         color: $app-primary;
-        text-align: center;
-        h1 {
-            font-size: 100px;
-        }
-        p {
-            font-size: 40px;
-        }
-
+        font-size: 10rem;
+    }
+    p {
+        color: $app-primary;
+        font-size: 3.0rem;
     }
 
     #login-form {
-        position: absolute;
-        bottom: 20px;
         .item {
             background: transparent;
-            margin-bottom: 10px;
-            padding: 2px;
             border: solid 1px $app-primary;
         }
         .label,
@@ -35,8 +31,26 @@ page-login {
             font-weight: bold;
             font-size: 20px;
             color: $app-secondary;
-
         }
     }
 
+    #signup-button {
+        padding: 0;
+        .button-inner {
+            display: -webkit-flex; /* Safari */
+            -webkit-justify-content: flex-end; /* Safari 6.1+ */
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    #forgot-password-button {
+        padding: 0;
+        .button-inner {
+            display: -webkit-flex; /* Safari */
+            -webkit-justify-content: flex-start; /* Safari 6.1+ */
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
 }
