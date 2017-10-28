@@ -6,7 +6,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { GroupsPage } from '../pages/groups/groups';
 import { ChatPage } from '../pages/chat/chat';
 import { TasksPage } from '../pages/tasks/tasks';
-import { LoginPage } from '../pages/login/login';
+import { LoginPage } from '../modules/auth/pages/login/login';
+
 
 
 
