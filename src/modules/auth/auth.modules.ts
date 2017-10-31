@@ -6,6 +6,7 @@ import {StoreModule} from "@ngrx/store";
 import {EffectsModule} from "@ngrx/effects";
 import {IonicPageModule} from "ionic-angular";
 import { BrowserModule } from '@angular/platform-browser';
+import { reducers } from './reducers/index';
 
 export const COMPONENTS = [LoginPage];
 
@@ -31,7 +32,7 @@ export class AuthModule {
 @NgModule({
     imports: [
         AuthModule,
-        //StoreModule.forFeature('auth', reducers),
+        StoreModule.forFeature('auth', reducers),
         //EffectsModule.forFeature([AuthEffects])
     ]
 })
