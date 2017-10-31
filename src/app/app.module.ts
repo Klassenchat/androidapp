@@ -13,7 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AuthModule } from '../modules/auth/auth.modules';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './app.reducer';
-import { environment } from './environment';
+import { environment } from '../environments/environment';
 
 
 

@@ -1,6 +1,6 @@
 import { ActionReducer, MetaReducer, ActionReducerMap } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { environment } from './environment';
+import { environment } from '../environments/environment';
 
 
 export interface State {
