@@ -6,7 +6,7 @@ export interface State {
 }
 
 export const initialState: State = {
-    error: "",
+    error: null,
     pending: false,
 };
 

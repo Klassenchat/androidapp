@@ -7,8 +7,12 @@ module.exports = function (config) {
             require('karma-chrome-launcher'),
             require('karma-remap-istanbul'),
             require('karma-mocha-reporter'),
-            require('@angular/cli/plugins/karma')
+            require('@angular/cli/plugins/karma'),
+            require('karma-jasmine-html-reporter')
         ],
+        client: {
+            clearContext: false // leave Jasmine Spec Runner output visible in browser
+        },
         files: [
             { pattern: './src/test.ts', watched: false }
         ],
