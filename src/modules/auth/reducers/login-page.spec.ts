@@ -2,7 +2,7 @@ import * as fromLoginPage from './login-page';
 import { reducer } from './login-page';
 import { Login, LoginFailure, LoginSuccess } from '../actions/auth';
 import { Authenticate, User } from '../models/user';
-import { expectjs, registerSnapshots } from "jasmine-snapshot";
+import { expectjs, registerSnapshots } from 'jasmine-snapshot';
 import { snapshots } from './__snapshots__/login-page.snapshots';
 
 describe('LoginPageReducer', () => {

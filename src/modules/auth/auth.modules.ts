@@ -1,10 +1,10 @@
-import { LoginPage } from "./pages/login/login";
-import { ModuleWithProviders, NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { ReactiveFormsModule } from "@angular/forms";
-import { StoreModule } from "@ngrx/store";
-import { EffectsModule } from "@ngrx/effects";
-import { IonicModule } from "ionic-angular";
+import { LoginPage } from './pages/login/login';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { IonicModule } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { reducers } from './reducers/index';
 import { AuthEffects } from './effects/auth.effects';
