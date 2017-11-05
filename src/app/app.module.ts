@@ -1,6 +1,6 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { TasksPage } from '../pages/tasks/tasks';
 import { GroupsPage } from '../pages/groups/groups';
@@ -14,8 +14,6 @@ import { AuthModule } from '../modules/auth/auth.modules';
 import { StoreModule } from '@ngrx/store';
 import { metaReducers, reducers } from './app.reducer';
 import { environment } from '../environments/environment';
-
-
 
 
 @NgModule({

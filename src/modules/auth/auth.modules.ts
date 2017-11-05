@@ -1,12 +1,14 @@
-import {LoginPage} from "./pages/login/login";
-import {NgModule, ModuleWithProviders} from "@angular/core";
-import {CommonModule} from "@angular/common";
-import {ReactiveFormsModule} from "@angular/forms";
-import {StoreModule} from "@ngrx/store";
-import {EffectsModule} from "@ngrx/effects";
-import {IonicPageModule} from "ionic-angular";
+import { LoginPage } from "./pages/login/login";
+import { ModuleWithProviders, NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+import { IonicModule } from "ionic-angular";
 import { BrowserModule } from '@angular/platform-browser';
 import { reducers } from './reducers/index';
+import { AuthEffects } from './effects/auth.effects';
+import { AuthService } from './providers/auth.service';
 
 export const COMPONENTS = [LoginPage];
 
@@ -15,7 +17,8 @@ export const COMPONENTS = [LoginPage];
         CommonModule,
         ReactiveFormsModule,
         BrowserModule,
-        IonicPageModule.forChild([LoginPage])
+        //IonicPageModule.forChild([LoginPage])
+        IonicModule.forRoot(LoginPage),
     ],
     declarations: COMPONENTS,
     exports: COMPONENTS
@@ -24,7 +27,7 @@ export class AuthModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: RootAuthModule,
-            //providers: [AuthService],
+            providers: [AuthService],
         };
     }
 }
@@ -33,7 +36,7 @@ export class AuthModule {
     imports: [
         AuthModule,
         StoreModule.forFeature('auth', reducers),
-        //EffectsModule.forFeature([AuthEffects])
+        EffectsModule.forFeature([AuthEffects])
     ]
 })
 

@@ -1,6 +1,6 @@
 import * as fromLoginPage from './login-page';
 import { reducer } from './login-page';
-import { Login, LoginSuccess, LoginFailure } from '../actions/auth';
+import { Login, LoginFailure, LoginSuccess } from '../actions/auth';
 import { Authenticate, User } from '../models/user';
 import { expectjs, registerSnapshots } from "jasmine-snapshot";
 import { snapshots } from './__snapshots__/login-page.snapshots';

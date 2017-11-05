@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { TasksPage } from '../../../../pages/tasks/tasks';
 import * as fromAuth from '../../reducers';
+import { Login } from '../../actions/auth';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'page-login',
@@ -11,20 +11,24 @@ import * as fromAuth from '../../reducers';
 })
 export class LoginPage {
     private form: FormGroup;
-    private isPending$ = this.store.select(fromAuth.getLoginPagePending);
-    private errorMessage$ = this.store.select(fromAuth.getLoginPageError);
+
+    /* tslint:disable */
+    private isPending$: Observable<boolean> = this.store.select(state => state.auth.loginPage.pending);
+    private errorMessage$: Observable<string | null> = this.store.select(state => state.auth.loginPage.error);
+    /* tslint:enable */
 
     constructor(private store: Store<fromAuth.State>,
-                private formBuilder: FormBuilder,
-                private navCtrl: NavController) {
-       this.form = this.formBuilder.group({
+                private formBuilder: FormBuilder) {
+        this.form = this.formBuilder.group({
             email: ['', Validators.required],
             password: ['', Validators.required],
         });
-
     }
 
     login() {
-        this.navCtrl.setRoot(TasksPage);
+        this.store.dispatch(new Login({
+            username: 'test',
+            password: 'test'
+        }));
     }
 }

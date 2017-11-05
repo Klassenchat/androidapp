@@ -1,5 +1,5 @@
-import { reducer } from './auth';
 import * as fromAuth from './auth';
+import { reducer } from './auth';
 import { Login, LoginSuccess, Logout } from '../actions/auth';
 import { Authenticate, User } from '../models/user';
 import { expectjs, registerSnapshots } from "jasmine-snapshot";
