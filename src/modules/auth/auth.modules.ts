@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { IonicModule } from 'ionic-angular';
+import { IonicPageModule } from 'ionic-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { reducers } from './reducers/index';
 import { AuthEffects } from './effects/auth.effects';
@@ -17,8 +17,7 @@ export const COMPONENTS = [LoginPage];
         CommonModule,
         ReactiveFormsModule,
         BrowserModule,
-        //IonicPageModule.forChild([LoginPage])
-        IonicModule.forRoot(LoginPage),
+        IonicPageModule.forChild([LoginPage]),
     ],
     declarations: COMPONENTS,
     exports: COMPONENTS
@@ -27,7 +26,7 @@ export class AuthModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: RootAuthModule,
-            providers: [AuthService],
+            providers: [AuthService]
         };
     }
 }
@@ -39,6 +38,5 @@ export class AuthModule {
         EffectsModule.forFeature([AuthEffects])
     ]
 })
-
 export class RootAuthModule {
 }

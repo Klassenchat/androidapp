@@ -6,10 +6,9 @@ import * as Auth from '../actions/auth';
 
 import 'rxjs/add/operator/exhaustMap';
 import 'rxjs/add/operator/catch';
-import { App, NavController } from 'ionic-angular';
-import { TasksPage } from '../../../pages/tasks/tasks';
-import { LoginPage } from '../pages/login/login';
+import { Events } from 'ionic-angular';
 import 'rxjs/add/operator/do';
+import { NAV_GO_TO_HOME, NAV_GO_TO_LOGIN } from '../../../app/app.component';
 
 @Injectable()
 export class AuthEffects {
@@ -29,22 +28,15 @@ export class AuthEffects {
     @Effect({dispatch: false})
     loginSuccess$ = this.actions$
         .ofType(Auth.LOGIN_SUCCESS)
-        .do(() => this.navCtrl.setRoot(TasksPage));
+        .do(() => this.events.publish(NAV_GO_TO_HOME, {}));
 
     @Effect({dispatch: false})
     loginRedirect$ = this.actions$
         .ofType(Auth.LOGIN_REDIRECT, Auth.LOGOUT)
-        .do(() => this.navCtrl.setRoot(LoginPage));
-
-
-    readonly ROOT_NAV_ID: string = 'n4';
+        .do(() => this.events.publish(NAV_GO_TO_LOGIN));
 
     constructor(private actions$: Actions,
                 private authService: AuthService,
-                private app: App) {
-    }
-
-    get navCtrl(): NavController {
-        return <NavController>this.app.getRootNavById(this.ROOT_NAV_ID);
+                private events: Events) {
     }
 }

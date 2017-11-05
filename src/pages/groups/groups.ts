@@ -1,19 +1,18 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {TasksPage} from "../tasks/tasks";
+import { Component } from '@angular/core';
+import { MyApp } from '../../app/app.component';
 
 @Component({
-  selector: 'page-groups',
-  templateUrl: 'groups.html'
+    selector: 'page-groups',
+    templateUrl: 'groups.html'
 })
 export class GroupsPage {
 
-  constructor(public navCtrl: NavController) {
-  }
+    constructor() {
+    }
 
-  backToGroupTasks(params) {
-    if (!params) params = {};
-    this.navCtrl.setRoot(TasksPage);
-  }
+    backToGroupTasks(params) {
+        // if (!params) params = {};
+        // this.app.goToTasks();
+    }
 
 }
